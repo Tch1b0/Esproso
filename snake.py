@@ -11,7 +11,7 @@ def setJson(response):
 @app.route("/")
 def snake():
     data = {
-        "apiversion": 1,
+        "apiversion": "1",
         "author": "Tch1b0",
         "color": "#400080",
         "head": "caffeine",

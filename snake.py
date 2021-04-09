@@ -22,15 +22,15 @@ def snake():
     response.mimetype = "application/json"
     return jsonify(data), HTTPStatus.OK
 
-@app.route("/start")
+@app.route("/start", methods=["POST"])
 def start():
     return jsonify({"status": "ok"}), HTTPStatus.OK
 
-@app.route("/move")
+@app.route("/move", methods=["POST"])
 def move():
     return jsonify({"move": "up"}), HTTPStatus.OK
 
-@app.route("/end")
+@app.route("/end", methods=["POST"])
 def end():
     return jsonify({"status": "ok"}), HTTPStatus.OK
 

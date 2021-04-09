@@ -24,7 +24,7 @@ def snake():
 
 @app.route("/start", methods=["POST"])
 def start():
-    return jsonify({"status": "ok"}), HTTPStatus.OK
+    return HTTPStatus.OK
 
 @app.route("/move", methods=["POST"])
 def move():
@@ -32,7 +32,7 @@ def move():
 
 @app.route("/end", methods=["POST"])
 def end():
-    return jsonify({"status": "ok"}), HTTPStatus.OK
+    return HTTPStatus.OK
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)

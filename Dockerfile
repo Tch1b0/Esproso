@@ -1,7 +1,10 @@
-FROM python:latest
+FROM python:3.7.2
+
+WORKDIR /app
 
 COPY /snake.py ./snake.py
+COPY /requirements.txt ./requirements.txt
 
-EXPOSE 3000:3000
+RUN pip install -r requirements.txt
 
 CMD ["python", "snake.py"]

@@ -1,7 +1,12 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 from http import HTTPStatus
 
 app = Flask(__name__)
+
+@app.after_request
+def setJson(response):
+    response.headers.add("Content-Type", "application/json")
+    return response
 
 @app.route("/")
 def snake():
@@ -13,6 +18,8 @@ def snake():
         "tail": "coffee",
         "version": "0.0.1"
     }
+    response = app.make_response(data)
+    response.mimetype = "application/json"
     return jsonify(data), HTTPStatus.OK
 
 @app.route("/start")

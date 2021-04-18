@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, Response
+from flask import Flask, jsonify
 from http import HTTPStatus
 
 app = Flask(__name__)
@@ -24,7 +24,7 @@ def snake():
 
 @app.route("/start", methods=["POST"])
 def start():
-    return HTTPStatus.OK
+    return jsonify({"status": "ok"}), HTTPStatus.OK
 
 @app.route("/move", methods=["POST"])
 def move():
@@ -32,7 +32,7 @@ def move():
 
 @app.route("/end", methods=["POST"])
 def end():
-    return HTTPStatus.OK
+    return jsonify({"status": "ok"}), HTTPStatus.OK
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True, threaded=True)
+    app.run(host="0.0.0.0", debug=True, threaded=True)

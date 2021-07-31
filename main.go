@@ -95,5 +95,7 @@ func CreateOrUpdateGame(req *http.Request) GameData.Data {
 	}
 	games[data.Game.Id] = data
 
+	fmt.Println(data.You.Head)
+
 	return data
 }

@@ -1,8 +1,18 @@
 # Esproso
-This is the legendary **Esproso** Snake, which you can play against in [Battlesnakes](https://play.battlesnake.com)!
+A [Battlesnake](https://play.battlesnake.com) made in [Go](https://golang.org/).
 
-## Run
-```
-$ docker build -t tch1b0/esproso .
-$ docker run -d -p 5001:5001 tch1b0/esproso
+## Tactic
+The main goal of Esproso is to survive.
+
+## Setting up
+Esproso is running on port `5001`
+
+```sh
+$ git clone https://github.com/Tch1b0/Esproso
+
+$ cd ./Esproso
+
+$ docker-compose build
+
+$ docker-compose up -d
 ```

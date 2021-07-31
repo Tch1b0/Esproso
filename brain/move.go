@@ -1,6 +1,11 @@
 package brain
 
-import GameData "github.com/Tch1b0/Esproso/data"
+import (
+	"fmt"
+
+	GameData "github.com/Tch1b0/Esproso/data"
+)
+
 
 func Move(data GameData.Data) string {
 	position := data.You.Head
@@ -32,5 +37,6 @@ func Move(data GameData.Data) string {
 		}
 	}
 
+	fmt.Printf("No escape")
 	return "up"
 }

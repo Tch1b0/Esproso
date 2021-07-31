@@ -66,6 +66,8 @@ func move(res http.ResponseWriter, req *http.Request) {
 
 	next_move := brain.Move(data)
 
+	fmt.Printf(next_move)
+
 	json.NewEncoder(res).Encode(turn {
 		Move: next_move,
 		Shout: fmt.Sprintf("I am absolutely NOT going to move %s!", next_move),

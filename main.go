@@ -79,20 +79,8 @@ func end(res http.ResponseWriter, req *http.Request) {
 
 
 func CreateOrUpdateGame(req *http.Request) GameData.Data {
-	var game GameData.Game
-	json.Unmarshal([]byte(req.FormValue("game")), &game)
-	turn := req.FormValue("turn")
-	var board GameData.Board
-	json.Unmarshal([]byte(req.FormValue("board")), &board)
-	var you GameData.Snake
-	json.Unmarshal([]byte(req.FormValue("you")), &you)
-
-	data := GameData.Data {
-		Game: game,
-		Turn: turn,
-		Board: board,
-		You: you, 
-	}
+	data := GameData.Data {}
+	json.NewDecoder(req.Body).Decode(&data)
 	games[data.Game.Id] = data
 
 	fmt.Println(data.Board.Food)

@@ -8,6 +8,7 @@ import (
 
 
 func Move(data GameData.Data) string {
+	fmt.Printf("Here")
 	position := data.You.Head
 	possibleMoves := []string{
 		"up",

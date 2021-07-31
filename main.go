@@ -95,7 +95,7 @@ func CreateOrUpdateGame(req *http.Request) GameData.Data {
 	}
 	games[data.Game.Id] = data
 
-	fmt.Println(data.You.Body)
+	fmt.Println(data.Board.Food)
 
 	return data
 }

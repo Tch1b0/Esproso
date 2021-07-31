@@ -33,6 +33,7 @@ func avoid(data GameData.Data) []string {
 	if position.Y + 1 == data.Board.Height {
 		avoidMoves = append(avoidMoves, "up")
 	} else if position.Y == 0 {
+		fmt.Println("WRONGLY ADDING DOWN")
 		avoidMoves = append(avoidMoves, "down")
 	}
 
@@ -40,24 +41,22 @@ func avoid(data GameData.Data) []string {
 	if position.X + 1 == data.Board.Width {
 		avoidMoves = append(avoidMoves, "right")
 	} else if position.X == 0 {
+		fmt.Println("WRONGLY ADDING LEFT")
 		avoidMoves = append(avoidMoves, "left")
 	}
 
 	for _, pos := range data.You.Body {
 		if containsCoordinate(surroundings, pos) {
-			fmt.Println("GET DIRECTION 1")
 			avoidMoves = append(avoidMoves, getDirection(position, pos))
 		}
 	}
 
 	for _, snake := range data.Board.Snakes {
 		if containsCoordinate(surroundings, snake.Head) {
-			fmt.Println("GET DIRECTION 2")
 			avoidMoves = append(avoidMoves, getDirection(position, snake.Head))
 		}
 		for _, pos := range snake.Body {
 			if containsCoordinate(surroundings, pos) {
-				fmt.Println("GET DIRECTION 3")
 				avoidMoves = append(avoidMoves, getDirection(position, pos))
 			}
 		}

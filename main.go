@@ -82,8 +82,5 @@ func CreateOrUpdateGame(req *http.Request) GameData.Data {
 	data := GameData.Data {}
 	json.NewDecoder(req.Body).Decode(&data)
 	games[data.Game.Id] = data
-
-	fmt.Println(data.Board.Food)
-
 	return data
 }

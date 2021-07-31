@@ -1,8 +1,6 @@
 package brain
 
 import (
-	"fmt"
-
 	GameData "github.com/Tch1b0/Esproso/data"
 )
 
@@ -10,7 +8,6 @@ import (
 func avoid(data GameData.Data) []string {
 	var avoidMoves []string
 	position := data.You.Head
-	fmt.Println(position)
 	surroundings := []*GameData.Coordinate{
 		{
 			X: position.X + 1, 

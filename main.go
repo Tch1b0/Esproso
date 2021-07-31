@@ -39,10 +39,10 @@ func customization(res http.ResponseWriter, req *http.Request) {
 	snake := CustomSnake {
 		Apiversion: "1",
 		Author: "Tch1b0",
-		Color: "#888888",
-		Head: "default",
-		Tail: "default",
-		Version: "0.1",
+		Color: "#6100d5",
+		Head: "caffeine",
+		Tail: "coffee",
+		Version: "1",
 	}
 
 	json.NewEncoder(res).Encode(snake)

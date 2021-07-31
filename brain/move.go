@@ -16,6 +16,7 @@ func Move(data GameData.Data) string {
 		"right",
 	}
 	avoidMoves := avoid(data)
+	fmt.Println(avoidMoves)
 
 	closeFood := findFood(data)
 

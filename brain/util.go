@@ -11,9 +11,9 @@ func containsString(arr []string, val string) bool {
 	return false
 }
 
-func containsCoordinate(arr []GameData.Coordinate, val GameData.Coordinate) bool {
+func containsCoordinate(arr []*GameData.Coordinate, val GameData.Coordinate) bool {
 	for _, a := range arr {
-		if a == val {
+		if *a == val {
 			return true
 		}
 	}

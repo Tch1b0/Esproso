@@ -5,20 +5,20 @@ import GameData "github.com/Tch1b0/Esproso/data"
 func avoid(data GameData.Data) []string {
 	var avoidMoves []string
 	position := data.You.Head
-	surroundings := []GameData.Coordinate{
-		GameData.Coordinate {
+	surroundings := []*GameData.Coordinate{
+		{
 			X: position.X + 1, 
 			Y: position.Y,
 		},
-		GameData.Coordinate {
+		{
 			X: position.X -1,
 			Y: position.Y, 
 		},
-		GameData.Coordinate {
+		{
 			X: position.X,
 			Y: position.Y + 1,
 		},
-		GameData.Coordinate {
+		{
 			X: position.X,
 			Y: position.Y - 1,
 		},

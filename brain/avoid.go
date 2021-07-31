@@ -1,6 +1,11 @@
 package brain
 
-import GameData "github.com/Tch1b0/Esproso/data"
+import (
+	"fmt"
+
+	GameData "github.com/Tch1b0/Esproso/data"
+)
+
 
 func avoid(data GameData.Data) []string {
 	var avoidMoves []string
@@ -40,16 +45,19 @@ func avoid(data GameData.Data) []string {
 
 	for _, pos := range data.You.Body {
 		if containsCoordinate(surroundings, pos) {
+			fmt.Println("GET DIRECTION 1")
 			avoidMoves = append(avoidMoves, getDirection(position, pos))
 		}
 	}
 
 	for _, snake := range data.Board.Snakes {
 		if containsCoordinate(surroundings, snake.Head) {
+			fmt.Println("GET DIRECTION 2")
 			avoidMoves = append(avoidMoves, getDirection(position, snake.Head))
 		}
 		for _, pos := range snake.Body {
 			if containsCoordinate(surroundings, pos) {
+				fmt.Println("GET DIRECTION 3")
 				avoidMoves = append(avoidMoves, getDirection(position, pos))
 			}
 		}

@@ -1,9 +1,8 @@
 package brain
 
 import (
-	"fmt"
-
-	GameData "github.com/Tch1b0/Esproso/data")
+	GameData "github.com/Tch1b0/Esproso/data"
+)
 
 
 func containsString(arr []string, val string) bool {
@@ -25,7 +24,6 @@ func containsCoordinate(arr []*GameData.Coordinate, val GameData.Coordinate) boo
 }
 
 func getDirection(pos1 GameData.Coordinate, pos2 GameData.Coordinate) string {
-	fmt.Println("GET DIRECTION")
 	if pos1.Y < pos2.Y {
 		return "up"
 	}

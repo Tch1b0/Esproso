@@ -25,16 +25,16 @@ func avoid(data GameData.Data) []string {
 	}
 
 	// Check if the snake is at the border of the y axis
-	if position.Y + 1 == data.Board.Height - 1 {
+	if position.Y + 1 == data.Board.Height {
 		avoidMoves = append(avoidMoves, "up")
-	} else if position.Y - 1 == -1 {
+	} else if position.Y == 0 {
 		avoidMoves = append(avoidMoves, "down")
 	}
 
 	// Check if the snake is at the border of the x axis
-	if position.X + 1 == data.Board.Width - 1 {
+	if position.X + 1 == data.Board.Width {
 		avoidMoves = append(avoidMoves, "right")
-	} else if position.X - 1 == -1 {
+	} else if position.X == 0 {
 		avoidMoves = append(avoidMoves, "left")
 	}
 

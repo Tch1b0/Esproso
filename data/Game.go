@@ -1,7 +1,7 @@
 package data
 
 type Game struct {
-	Id      int     `json:"id"`
+	Id      string  `json:"id"`
 	Ruleset Ruleset `json:"ruleset"`
 	Timeout int     `json:"timeout"`
 }

@@ -1,6 +1,7 @@
 # Esproso
 
 ![badge](https://img.shields.io/github/license/Tch1b0/Esproso)
+
 A [Battlesnake](https://play.battlesnake.com) made in [Go](https://golang.org/).
 
 ## Tactic

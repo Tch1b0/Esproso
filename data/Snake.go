@@ -1,7 +1,7 @@
 package data
 
 type Snake struct {
-	Id      int          `json:"id"`
+	Id      string       `json:"id"`
 	Name    string       `json:"name"`
 	Health  int          `json:"health"`
 	Body    []Coordinate `json:"body"`

@@ -4,7 +4,6 @@ import (
 	GameData "github.com/Tch1b0/Esproso/data"
 )
 
-
 func Move(data GameData.Data) string {
 	position := data.You.Head
 	possibleMoves := []string{
@@ -21,12 +20,12 @@ func Move(data GameData.Data) string {
 	foodDirection := getDirection(position, closeFood)
 
 	// Go up/down if y-value isn't equal
-	if position.Y != closeFood.Y && 
-	    !containsString(avoidMoves, foodDirection) {
-		return foodDirection
-	} else if position.X != closeFood.X && 
+	if position.Y != closeFood.Y &&
 		!containsString(avoidMoves, foodDirection) {
-		return foodDirection		
+		return foodDirection
+	} else if position.X != closeFood.X &&
+		!containsString(avoidMoves, foodDirection) {
+		return foodDirection
 	}
 
 	for _, move := range possibleMoves {

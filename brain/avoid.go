@@ -4,18 +4,17 @@ import (
 	GameData "github.com/Tch1b0/Esproso/data"
 )
 
-
 func avoid(data GameData.Data) []string {
 	var avoidMoves []string
 	position := data.You.Head
 	surroundings := []*GameData.Coordinate{
 		{
-			X: position.X + 1, 
+			X: position.X + 1,
 			Y: position.Y,
 		},
 		{
-			X: position.X -1,
-			Y: position.Y, 
+			X: position.X - 1,
+			Y: position.Y,
 		},
 		{
 			X: position.X,
@@ -28,14 +27,14 @@ func avoid(data GameData.Data) []string {
 	}
 
 	// Check if the snake is at the border of the y axis
-	if position.Y + 1 == data.Board.Height {
+	if position.Y+1 == data.Board.Height {
 		avoidMoves = append(avoidMoves, "up")
 	} else if position.Y == 0 {
 		avoidMoves = append(avoidMoves, "down")
 	}
 
 	// Check if the snake is at the border of the x axis
-	if position.X + 1 == data.Board.Width {
+	if position.X+1 == data.Board.Width {
 		avoidMoves = append(avoidMoves, "right")
 	} else if position.X == 0 {
 		avoidMoves = append(avoidMoves, "left")
@@ -60,4 +59,3 @@ func avoid(data GameData.Data) []string {
 
 	return avoidMoves
 }
-

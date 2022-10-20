@@ -4,7 +4,6 @@ import (
 	GameData "github.com/Tch1b0/Esproso/data"
 )
 
-
 func containsString(arr []string, val string) bool {
 	for _, a := range arr {
 		if a == val {

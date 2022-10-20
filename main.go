@@ -22,7 +22,7 @@ type CustomSnake struct {
 	Tail       string `json:"tail"`
 	Version    string `json:"version"`
 }
-type turn struct {
+type Turn struct {
 	Move  string `json:"move"`
 	Shout string `json:"shout"`
 }
@@ -67,7 +67,7 @@ func move(res http.ResponseWriter, req *http.Request) {
 
 	next_move := brain.Move(data)
 
-	json.NewEncoder(res).Encode(turn{
+	json.NewEncoder(res).Encode(Turn{
 		Move:  next_move,
 		Shout: fmt.Sprintf("I am absolutely NOT going to move %s!", next_move),
 	})
